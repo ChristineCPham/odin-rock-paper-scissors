@@ -1,6 +1,7 @@
 let playerSelection;
 let computerSelection;
 let playerResult;
+let gameRound = 0;
 let playerPoints = 0;
 let computerPoints = 0;
 
@@ -70,6 +71,10 @@ function playRound() {
 
 //Shows the winner of the game
 function roundWinner() {
+    //Shows users what round the game is at
+    gameRound++;
+    console.log(`Round: ${gameRound}`);
+
     //Logs the winner of the round and the selections
     switch (playerResult) {
         case 'win':
