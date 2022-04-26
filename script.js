@@ -8,14 +8,11 @@ function userPrompt() {
     playerSelection = prompt('Enter rock, paper, or scissors.');
 
     //Check if user entered a response
-    (playerSelection) ? true: alert('This round has been cancelled.')
+    (playerSelection) ? true: alert('This game has been cancelled.')
 
     // Make playerSelection case-insensitive
     playerSelection = playerSelection.slice(0,1).toUpperCase()
     + playerSelection.slice(1).toLowerCase();
-
-    //Remove when done
-    console.log(playerSelection);
 }
 
 // Check if the user entered Rock, Paper, or Scissors
@@ -40,9 +37,6 @@ function computerPlay() {
     } else {
         console.log('Error at function computerPlay()');
     }
-
-    //Remove when done
-    console.log(computerSelection);
 }
 
 function playRound() {
@@ -72,13 +66,7 @@ function playRound() {
     } else {
         alert('Error at function playRound().')
     }
-
-    //Delete when done
-    console.log(playerResult);
 } 
-
-playRound();
-roundWinner();
 
 //Shows the winner of the game
 function roundWinner() {
@@ -97,6 +85,26 @@ function roundWinner() {
     }
 
     //Shows player and computer's points
-    console.log(`You: ${playerPoints}`);
-    console.log(`Computer: ${computerPoints}`);
+    console.log(`You: ${playerPoints}\nComputer: ${computerPoints}`);
 }
+
+function game() {
+    //Plays the game round 5 times
+    for (let i = 0; i < 5; i++) {
+        playRound();
+        roundWinner();
+    }
+
+    //Logs the winner of the game
+    if (playerPoints > computerPoints) {
+        console.log('You win this game!');
+    } else if (playerPoints < computerPoints) {
+        console.log('You lose this game! Try again next time.');
+    } else if (playerPoints === computerPoints) {
+        console.log('We tied this game!');
+    } else {
+        console.log('Error at game().');
+    }
+}
+
+game();
