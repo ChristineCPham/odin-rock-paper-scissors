@@ -1,6 +1,8 @@
 let playerSelection;
 let computerSelection;
 let playerResult;
+let playerPoints = 0;
+let computerPoints = 0;
 
 function userPrompt() {
     playerSelection = prompt('Enter rock, paper, or scissors.');
@@ -73,5 +75,28 @@ function playRound() {
 
     //Delete when done
     console.log(playerResult);
-}    
+} 
 
+playRound();
+roundWinner();
+
+//Shows the winner of the game
+function roundWinner() {
+    //Logs the winner of the round and the selections
+    switch (playerResult) {
+        case 'win':
+            console.log(`You win! ${playerSelection} beats ${computerSelection}.`);
+            playerPoints++;
+            break;
+        case 'tie':
+            console.log(`We tied. We both chose ${playerSelection}.`);
+            break;
+        case 'lose':
+            console.log(`You lose. ${computerSelection} beats ${playerSelection}.`);
+            computerPoints++;
+    }
+
+    //Shows player and computer's points
+    console.log(`You: ${playerPoints}`);
+    console.log(`Computer: ${computerPoints}`);
+}
