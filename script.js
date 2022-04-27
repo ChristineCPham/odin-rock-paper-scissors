@@ -11,7 +11,7 @@ function userPrompt() {
     playerSelection = prompt('Enter rock, paper, or scissors.');
 
     //Check if user entered a response
-    (playerSelection) ? true: alert('This game has been cancelled.')
+    (playerSelection) ? true: alert('This game has been cancelled.');
 
     // Make playerSelection case-insensitive
     playerSelection = playerSelection.slice(0,1).toUpperCase()
