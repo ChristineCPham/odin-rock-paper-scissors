@@ -43,6 +43,7 @@ This project let me incorporate what I previously learned into a game. For examp
 ```js
 
 //Check if user entered a response
+
 (playerSelection) ? true: alert('This game has been cancelled.');
 
 ```
@@ -52,6 +53,7 @@ I also used a switch statement to log the winner of the round and which selectio
 ```js
 
     //Logs the winner of the round and the selections
+    
     switch (playerResult) {
         case 'win':
             console.log(`You win! ${playerSelection} beats ${computerSelection}.`);
