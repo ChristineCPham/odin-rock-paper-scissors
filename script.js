@@ -92,6 +92,7 @@ function roundWinner() {
         case 'lose':
             console.log(`You lose. ${computerSelection} beats ${playerSelection}.`);
             computerPoints++;
+            break;
     }
 
     //Shows player and computer's points
