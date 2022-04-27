@@ -5,11 +5,11 @@ This is a solution to [The Odin Project's](https://www.theodinproject.com/) [Roc
 ## Table of Contents
 
 -[Overview](#overview)
-    -[The Challenge](#the-challenge)
-    -[Links](#links)
+  -[The Challenge](#the-challenge)
+  -[Links](#links)
 -[My Process](#my-process)
-    -[Build With](#built-with)
-    -[What I Learned](#what-i-learned)
+  -[Build With](#built-with)
+  -[What I Learned](#what-i-learned)
     -[Continued Development](#continued-development)
 -[Author](#author)
 
