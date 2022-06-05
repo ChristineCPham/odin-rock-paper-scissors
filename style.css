@@ -1,0 +1,57 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    font-size: 1.5rem;
+    text-align: center;
+    border-bottom: solid;
+}
+
+h1 {
+    line-height: 1;
+}
+
+#score {
+    font-size: 10rem;
+    border: solid;
+    margin: 10%;
+    text-align: center;
+}
+
+#playerSelection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5%;
+}
+
+button {
+    font-size: 1.5rem;
+    padding: 2%;
+    width: 25%;
+    border:black solid;
+    background-color: white;
+}
+
+button:hover {
+    box-shadow: 0 0 1rem #383838;
+    transform: scale(1.05);
+}
+
+footer {
+    border-top: black solid;
+    text-align: center;
+    margin-top: 10%;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+footer li {
+    list-style: none;
+}

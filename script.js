@@ -5,26 +5,26 @@ let playerResult;
 let gameRound = 0;
 let playerPoints = 0;
 let computerPoints = 0;
-
-//Allows users to enter a selection
+/*
+Allows users to enter a selection 
 function userPrompt() {
     playerSelection = prompt('Enter rock, paper, or scissors.');
 
-    //Check if user entered a response
+    Check if user entered a response
     (playerSelection) ? true: alert('This game has been cancelled.');
 
-    // Make playerSelection case-insensitive
+    Make playerSelection case-insensitive
     playerSelection = playerSelection.slice(0,1).toUpperCase()
     + playerSelection.slice(1).toLowerCase();
 }
 
-// Check if the user entered Rock, Paper, or Scissors
+Check if the user entered Rock, Paper, or Scissors
 function checkUserPrompt() {
     if (playerSelection === 'Rock' || playerSelection === 'Paper' || playerSelection === 'Scissors') {
     } else {
         alert('Sorry. That is not a valid response.');
     }
-}
+} */
 
 //Generates random computer selection
 function computerPlay() {
