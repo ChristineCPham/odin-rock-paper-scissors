@@ -6,6 +6,26 @@ let gameRound = 0;
 let playerPoints = 0;
 let computerPoints = 0;
 
+//function userInput() {
+    const rock = document.querySelector('#rock');
+    rock.addEventListener('click', () => {
+        playerSelection = 'Rock';
+        alert(playerSelection);
+    })
+
+    const paper = document.querySelector('#paper');
+    paper.addEventListener('click', () => {
+        playerSelection = 'Paper';
+        alert(playerSelection);
+    })
+
+    const scissors = document.querySelector('#scissors');
+    scissors.addEventListener('click', () => {
+        playerSelection = 'Scissors';
+        alert(playerSelection);
+    })
+//}
+
 //Generates random computer selection
 function computerPlay() {
     //Generate random number
@@ -26,10 +46,6 @@ function computerPlay() {
 
 //Plays a single round of the game
 function playRound() {
-    userPrompt();
-    checkUserPrompt();
-    computerPlay();
-
     //Determine winner of a round
     if (playerSelection === 'Rock' && computerSelection === 'Rock') {
         playerResult = 'tie';
@@ -55,7 +71,7 @@ function playRound() {
 } 
 
 //Shows the winner of the game
-function roundWinner() {
+function roundResult() {
     //Shows users what round the game is at
     gameRound++;
     const roundNum = document.querySelector('#roundNum');
@@ -92,13 +108,5 @@ function roundWinner() {
     displayComputerPts.textContent = computerPoints;
 }
 
-//Plays the entire game
-function game() {
-    //Plays the game round 5 times
-    for (let i = 0; i < 5; i++) {
-        playRound();
-        roundWinner();
-    }
-}
-
-game();
+//userInput();
+console.log(playerSelection);
