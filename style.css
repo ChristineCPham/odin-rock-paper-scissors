@@ -37,6 +37,7 @@ h1 {
 #selection p {
     text-align: center;
     font-size: 1.25rem;
+    margin-top: 0;
 }
 
 #buttonSelection {

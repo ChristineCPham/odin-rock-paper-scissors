@@ -58,22 +58,38 @@ function playRound() {
 function roundWinner() {
     //Shows users what round the game is at
     gameRound++;
-    console.log(`Round: ${gameRound}`);
+    const roundNum = document.querySelector('#roundNum');
+    roundNum.textContent = `Round Number: ${gameRound}`;
 
-    //Logs the winner of the round and the selections
+    //Query Selector for HMTL Elements
+    const winner = document.querySelector('#winner');
+    const displayPlayer = document.querySelector('#displayPlayer');
+    const displayComputer = document.querySelector('#displayComputer');
+    const displayPlayerPts = document.querySelector('#displayPlayerPts');
+    const displayComputerPts = document.querySelector('#displayComputerPts');
+
+    //Displays the selections of the player & computer
+    displayPlayer.textContent = `Selection: ${playerSelection}`;
+    displayComputer.textContent = `Selection: ${computerSelection}`;
+
+    //Displays the winner of the round
     switch (playerResult) {
         case 'win':
-            console.log(`You win! ${playerSelection} beats ${computerSelection}.`);
+            winner.textContent = 'Round Winner: Player';
             playerPoints++;
             break;
         case 'tie':
-            console.log(`We tied. We both chose ${playerSelection}.`);
+            winner.textContent = 'Round Winner: None';
             break;
         case 'lose':
-            console.log(`You lose. ${computerSelection} beats ${playerSelection}.`);
+            winner.textContent = 'Round Winner: Computer';
             computerPoints++;
             break;
     }
+
+    //Shows player & computer points
+    displayComputerPts.textContent = playerPoints;
+    displayComputerPts.textContent = computerPoints;
 }
 
 //Plays the entire game
