@@ -99,17 +99,6 @@ function game() {
         playRound();
         roundWinner();
     }
-
-    //Logs the winner of the game
-    if (playerPoints > computerPoints) {
-        console.log('You win this game!');
-    } else if (playerPoints < computerPoints) {
-        console.log('You lose this game! Try again next time.');
-    } else if (playerPoints === computerPoints) {
-        console.log('We tied this game!');
-    } else {
-        console.log('Error at game().');
-    }
 }
 
 game();
