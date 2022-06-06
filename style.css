@@ -12,14 +12,28 @@ h1 {
     line-height: 1;
 }
 
-#score {
-    font-size: 10rem;
-    border: solid;
-    margin: 10%;
+#roundNum, #winner {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 2%;
+}
+
+#displaySelections {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#displaySelections div {
+    font-size: 1.5rem;
+    border: black solid;
+    padding: 2%;
+    width: 10rem;
     text-align: center;
 }
 
-#playerSelection {
+#buttonSelection {
     display: flex;
     flex-direction: row;
     justify-content: center;
