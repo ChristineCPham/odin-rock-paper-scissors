@@ -5,9 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
     <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <script src="/script.js"></script>
+    <script src="/script.js" defer></script>
+
+    <header>
+        <h1>Rock, Paper, Scissors</h1>
+    </header>
+
+    <section>
+        <p id="roundNum">Round Number: 0</p>
+    </section>
+
+    <section id="displaySelections">
+        <section class="player">
+            <h2>Player</h2>
+            <div id="displayPlayerPts">0</div>
+            <p id="displayPlayer">Selection: </p>
+        </section>
+
+        <section class="computer">
+            <h2>Computer</h2>
+            <div id="displayComputerPts">0</div>
+            <p id="displayComputer">Selection: </p>
+        </section>
+    </section>
+
+    <section>
+        <p  id="winner">Round Winner: None</p>
+    </section>
+
+    <section id="selection">
+        <p>Select your choice:</p>
+        <div id="buttonSelection">
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
+        </div>
+    </section>
+
+    <footer>
+        <ul>
+            <li><a href="https://github.com/ChristineCPham">Christine Pham</a></li>
+            <li><a href="https://www.theodinproject.com/lessons/foundations-rock-paper-scissors">Odin Project: Rock, Paper, Scissors</a></li>
+            <li><a href="https://github.com/ChristineCPham/odin-rock-paper-scissors">Solution Code</a></li>
+        </ul>
+    </footer>
+
 </body>
 </html>

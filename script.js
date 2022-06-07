@@ -6,24 +6,25 @@ let gameRound = 0;
 let playerPoints = 0;
 let computerPoints = 0;
 
-//Allows users to enter a selection
-function userPrompt() {
-    playerSelection = prompt('Enter rock, paper, or scissors.');
+// Plays game when button is clicked
+function userInput() {
+    const rock = document.querySelector('#rock');
+    rock.addEventListener('click', () => {
+        playerSelection = 'Rock';
+        playRound();
+    })
 
-    //Check if user entered a response
-    (playerSelection) ? true: alert('This game has been cancelled.');
+    const paper = document.querySelector('#paper');
+    paper.addEventListener('click', () => {
+        playerSelection = 'Paper';
+        playRound();
+    })
 
-    // Make playerSelection case-insensitive
-    playerSelection = playerSelection.slice(0,1).toUpperCase()
-    + playerSelection.slice(1).toLowerCase();
-}
-
-// Check if the user entered Rock, Paper, or Scissors
-function checkUserPrompt() {
-    if (playerSelection === 'Rock' || playerSelection === 'Paper' || playerSelection === 'Scissors') {
-    } else {
-        alert('Sorry. That is not a valid response.');
-    }
+    const scissors = document.querySelector('#scissors');
+    scissors.addEventListener('click', () => {
+        playerSelection = 'Scissors';
+        playRound();
+    })
 }
 
 //Generates random computer selection
@@ -46,8 +47,6 @@ function computerPlay() {
 
 //Plays a single round of the game
 function playRound() {
-    userPrompt();
-    checkUserPrompt();
     computerPlay();
 
     //Determine winner of a round
@@ -72,51 +71,64 @@ function playRound() {
     } else {
         alert('Error at function playRound().')
     }
+
+    roundResult();
+    endGame();
 } 
 
-//Shows the winner of the game
-function roundWinner() {
+//Shows the round #, winner, and points of the game
+function roundResult() {
     //Shows users what round the game is at
     gameRound++;
-    console.log(`Round: ${gameRound}`);
+    const roundNum = document.querySelector('#roundNum');
+    roundNum.textContent = `Round Number: ${gameRound}`;
 
-    //Logs the winner of the round and the selections
+    //Query Selector for HMTL Elements
+    const winner = document.querySelector('#winner');
+    const displayPlayer = document.querySelector('#displayPlayer');
+    const displayComputer = document.querySelector('#displayComputer');
+    const displayPlayerPts = document.querySelector('#displayPlayerPts');
+    const displayComputerPts = document.querySelector('#displayComputerPts');
+
+    //Displays the selections of the player & computer
+    displayPlayer.textContent = `Selection: ${playerSelection}`;
+    displayComputer.textContent = `Selection: ${computerSelection}`;
+
+    //Displays the winner of the round
     switch (playerResult) {
         case 'win':
-            console.log(`You win! ${playerSelection} beats ${computerSelection}.`);
+            winner.textContent = 'Round Winner: Player';
             playerPoints++;
             break;
         case 'tie':
-            console.log(`We tied. We both chose ${playerSelection}.`);
+            winner.textContent = 'Round Winner: None';
             break;
         case 'lose':
-            console.log(`You lose. ${computerSelection} beats ${playerSelection}.`);
+            winner.textContent = 'Round Winner: Computer';
             computerPoints++;
             break;
     }
 
-    //Shows player and computer's points
-    console.log(`You: ${playerPoints}\nComputer: ${computerPoints}`);
+    //Shows player & computer points
+    displayPlayerPts.textContent = playerPoints;
+    displayComputerPts.textContent = computerPoints;
 }
 
-//Plays the entire game
-function game() {
-    //Plays the game round 5 times
-    for (let i = 0; i < 5; i++) {
-        playRound();
-        roundWinner();
-    }
-
-    //Logs the winner of the game
-    if (playerPoints > computerPoints) {
-        console.log('You win this game!');
-    } else if (playerPoints < computerPoints) {
-        console.log('You lose this game! Try again next time.');
-    } else if (playerPoints === computerPoints) {
-        console.log('We tied this game!');
+//Ends & resets game at 5 points
+function endGame() {
+    if (playerPoints >= 5) {
+        winner.textContent = 'Player wins!'
+        gameRound = 0;
+        playerPoints = 0;
+        computerPoints = 0;
+    } else if (computerPoints >= 5) {
+        winner.textContent = 'Computer wins!'
+        gameRound = 0;
+        playerPoints = 0;
+        computerPoints = 0;
     } else {
-        console.log('Error at game().');
+
     }
 }
 
-game();
+userInput();
