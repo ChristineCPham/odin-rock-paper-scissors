@@ -6,25 +6,26 @@ let gameRound = 0;
 let playerPoints = 0;
 let computerPoints = 0;
 
-//function userInput() {
+// Plays game when button is clicked
+function userInput() {
     const rock = document.querySelector('#rock');
     rock.addEventListener('click', () => {
         playerSelection = 'Rock';
-        alert(playerSelection);
+        playRound();
     })
 
     const paper = document.querySelector('#paper');
     paper.addEventListener('click', () => {
         playerSelection = 'Paper';
-        alert(playerSelection);
+        playRound();
     })
 
     const scissors = document.querySelector('#scissors');
     scissors.addEventListener('click', () => {
         playerSelection = 'Scissors';
-        alert(playerSelection);
+        playRound();
     })
-//}
+}
 
 //Generates random computer selection
 function computerPlay() {
@@ -46,6 +47,8 @@ function computerPlay() {
 
 //Plays a single round of the game
 function playRound() {
+    computerPlay();
+
     //Determine winner of a round
     if (playerSelection === 'Rock' && computerSelection === 'Rock') {
         playerResult = 'tie';
@@ -68,9 +71,12 @@ function playRound() {
     } else {
         alert('Error at function playRound().')
     }
+
+    roundResult();
+    endGame();
 } 
 
-//Shows the winner of the game
+//Shows the round #, winner, and points of the game
 function roundResult() {
     //Shows users what round the game is at
     gameRound++;
@@ -104,9 +110,25 @@ function roundResult() {
     }
 
     //Shows player & computer points
-    displayComputerPts.textContent = playerPoints;
+    displayPlayerPts.textContent = playerPoints;
     displayComputerPts.textContent = computerPoints;
 }
 
-//userInput();
-console.log(playerSelection);
+//Ends & resets game at 5 points
+function endGame() {
+    if (playerPoints >= 5) {
+        winner.textContent = 'Player wins!'
+        gameRound = 0;
+        playerPoints = 0;
+        computerPoints = 0;
+    } else if (computerPoints >= 5) {
+        winner.textContent = 'Computer wins!'
+        gameRound = 0;
+        playerPoints = 0;
+        computerPoints = 0;
+    } else {
+
+    }
+}
+
+userInput();
