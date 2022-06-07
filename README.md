@@ -1,6 +1,6 @@
 # The Odin Project - Rock, Paper, Scssiors
 
-This is a solution to [The Odin Project's](https://www.theodinproject.com/) [Rock, Paper, Scissors](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/rock-paper-scissors) project. The Odin Project is a free and open source full-stack cirriculum.
+This is a solution to The Odin Project's [Rock, Paper, Scissors](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/rock-paper-scissors) project. It also include an extension of their project [Revisiting Rock, Paper, Scissors](https://www.theodinproject.com/lessons/foundations-revisiting-rock-paper-scissors). [The Odin Project](https://www.theodinproject.com/) is a free and open source full-stack cirriculum.
 
 ## Table of Contents
 
@@ -18,9 +18,9 @@ This is a solution to [The Odin Project's](https://www.theodinproject.com/) [Roc
 ### The Challenge
 
 Users should be able to:
-- Input their choice of rock, paper, or scissors
+- Click their choice of rock, paper, or scissors
 - Play against a computer
-- See their game results in the console
+- See their game results in the user interface
 
 ### Links
 
@@ -32,6 +32,7 @@ Users should be able to:
 ### Built With
 
 - Semantic HTML5 Markup
+- CSS3
 - JavaScript
 
 ### What I Learned
@@ -70,6 +71,33 @@ I also used a switch statement to log the winner of the round and which selectio
 
 ```
 
+In the extended version of the project, I created a user interface and removed the console log code. Here, I practiced using DOM manipulation and event listeners in JavaScript.
+
+```js
+
+// Plays game when button is clicked
+function userInput() {
+    const rock = document.querySelector('#rock');
+    rock.addEventListener('click', () => {
+        playerSelection = 'Rock';
+        playRound();
+    })
+
+    const paper = document.querySelector('#paper');
+    paper.addEventListener('click', () => {
+        playerSelection = 'Paper';
+        playRound();
+    })
+
+    const scissors = document.querySelector('#scissors');
+    scissors.addEventListener('click', () => {
+        playerSelection = 'Scissors';
+        playRound();
+    })
+}
+
+```
+
 ### Continued Development
 
 I will continue learning JavaScript, particularly on writing clean code. Writing clean code is very important to me. 
@@ -78,5 +106,6 @@ A major part of front-end development is learning how to code websites with a gr
 
 ## Author
 
+GitHub: [ChristineCPham](https://github.com/ChristineCPham)
 - LinkedIn: [ChristineP](https://www.linkedin.com/in/christine-p-b456751a6/)
 - Frontend Mentor: [ChristineCPham](https://www.frontendmentor.io/profile/ChristineCPham)
